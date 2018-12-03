@@ -5,12 +5,12 @@ import java.util.Date;
 
 public abstract class Tripulant implements Component{
     
-    private String passaport;
-    private String nom;
-    private int edat;
-    private Date dataAlta;
-    private int horesVol;
-    private String rang;
+    protected String passaport;
+    protected String nom;
+    protected int edat;
+    protected Date dataAlta;
+    protected int horesVol;
+    protected String rang;
     
     public Tripulant(String pPassaport, String pNom, int pEdat, int pHoresVol) {
         this.passaport = passaport;
@@ -76,19 +76,13 @@ public abstract class Tripulant implements Component{
     public void modificarComponent(){
         
         System.out.println("\nEl passaport actual del Component és:" + passaport);
-        System.out.println("\nQuin és el nou passaport del Component?");
-        passaport = DADES.next();
-        DADES.nextLine(); //Neteja de buffer
+        passaport = (String)demanarDades("\nQuin és el nou passaport del Component?", 2);
         System.out.println("\nEl nom actual del Component és:" + nom);
-        System.out.println("\nQuin és el nou nom del Component?");
-        nom = DADES.nextLine();
+        nom = (String)demanarDades("\nQuin és el nou nom del Component?", 4);
         System.out.println("\nL'edat actual del Component és:" + edat);
-        System.out.println("\nQuina és la nova edat del Component?");
-        edat = DADES.nextInt();
-
+        edat = (int)demanarDades("\nQuina és la nova edat del Component?", 1);
         System.out.println("Les hores de vol actuals del Component són:" + horesVol);
-        System.out.println("\nQuines són les hores de vol actuals del Component:");
-        horesVol = DADES.nextInt();
+        edat = (int)demanarDades("\nQuines són les hores de vol actuals del Component:", 1);
     }
     
     public void mostrarComponent() {
