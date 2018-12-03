@@ -13,7 +13,7 @@ public class Avio implements Component {
 	private String model;
 	private int capacitat;
 	private Classe[] classes;
-	private int posicioClasses; // Atribut que controla la primera posició buida del vector
+	private int posicioClasses; // Atribut que controla la primera posiciÃ³ buida del vector
 
 	// CONSTRUCTOR
 	public Avio(String codi, String fabricant, String model, int capacitat) {
@@ -78,20 +78,20 @@ public class Avio implements Component {
 		String codi, fabricant, model;
 		int capacitat;
 
-		System.out.println("\nCodi de l'avió:");
+		System.out.println("\nCodi de l'aviÃ³:");
 		codi = DADES.next();
 		DADES.nextLine(); // Neteja de buffer
-		System.out.println("\nFabricant de l'avió:");
+		System.out.println("\nFabricant de l'aviÃ³:");
 		fabricant = DADES.nextLine();
-		System.out.println("\nModel de l'avió:");
+		System.out.println("\nModel de l'aviÃ³:");
 		model = DADES.nextLine();
-		System.out.println("\nCapacitat de l'avió:");
+		System.out.println("\nCapacitat de l'aviÃ³:");
 		capacitat = DADES.nextInt();
 
 		return new Avio(codi, fabricant, model, capacitat);
 	}
 
-	// AFEGIR CLASSE A AVIÓ
+	// AFEGIR CLASSE A aviÃ³
 	public void afegirClasse() {
 
 		int capacitatClasses = 0;
@@ -132,24 +132,24 @@ public class Avio implements Component {
 	}
 
 	public void mostrarComponent() {
-		System.out.println("\nLes dades de l'avió amb codi " + codi + " són:");
+		System.out.println("\nLes dades de l'aviÃ³ amb codi " + codi + " sÃ³n:");
 		System.out.println("\nFabricant: " + fabricant);
 		System.out.println("\nModel: " + model);
 		System.out.println("\nCapacitat: " + capacitat);
 	}
 
 	public void modificarComponent() throws ParseException {
-		System.out.println("\nEl codi de l'avió és: " + codi);
-		codi = (String) demanarDades("\nQuin és el nou Codi de l'avió?", 2);
+		System.out.println("\nEl codi de l'aviÃ³ Ã©s: " + codi);
+		codi = (String) demanarDades("\nQuin Ã©s el nou Codi de l'aviÃ³?", 2);
 
-		System.out.println("\nEl fabricant de l'avió és: " + fabricant);
-		fabricant = (String) demanarDades("\nQuin és el nou fabricant de l'avió?", 4);
+		System.out.println("\nEl fabricant de l'aviÃ³ Ã©s: " + fabricant);
+		fabricant = (String) demanarDades("\nQuin Ã©s el nou fabricant de l'aviÃ³?", 4);
 
-		System.out.println("\nEl model de l'avió és: " + model);
-		model = (String) demanarDades("\nQuin és el nou model de l'avió?", 4);
+		System.out.println("\nEl model de l'aviÃ³ Ã©s: " + model);
+		model = (String) demanarDades("\nQuin Ã©s el nou model de l'aviÃ³?", 4);
 
-		System.out.println("\nLa capacitat de l'avió és: " + capacitat);
-		capacitat = (int) demanarDades("\nQuina és la nova capacitat de l'avió?", 1);
+		System.out.println("\nLa capacitat de l'aviÃ³ Â´Ã©s: " + capacitat);
+		capacitat = (int) demanarDades("\nQuina Ã©s la nova capacitat de l'aviÃ³?", 1);
 	}
 
 }
