@@ -1,206 +1,155 @@
-/*
- * Un avi√≥ es defineix pel seu codi, fabricant, model, capacitat i un vector amb 
- * les seves classes.
- */
 package components;
 
-import java.util.Scanner;
+import java.text.ParseException;
 
 /**
  *
  * @author root
  */
-public class Avio {
+public class Avio implements Component {
 
-    private final static Scanner DADES = new Scanner(System.in);
+	private String codi;
+	private String fabricant;
+	private String model;
+	private int capacitat;
+	private Classe[] classes;
+	private int posicioClasses; // Atribut que controla la primera posiciÛ buida del vector
 
-    private String codi;
-    private String fabricant;
-    private String model;
-    private int capacitat;
-    private Classe[] classes;
-    private int posicioClasses; //Atribut que controla la primera posici√≥ vuida del vector
+	// CONSTRUCTOR
+	public Avio(String codi, String fabricant, String model, int capacitat) {
+		this.codi = codi;
+		this.fabricant = fabricant;
+		this.model = model;
+		this.capacitat = capacitat;
+		classes = new Classe[4];
+		posicioClasses = 0;
+	}
 
-    /*
-     CONSTRUCTOR
-     Par√†metres: valors per tots els atributs de la classe menys classes i posicioClasses.
-     Accions:
-     - Assignar als atributs els valors passats com a par√†metres.
-     - Inicialitzar el vector classes com a buit i una longitud de 4.
-     - Inicialitzar l'atribut possicioClasses a 0.
-     */
-    public Avio(String codi, String fabricant, String model, int capacitat) {
-        this.codi = codi;
-        this.fabricant = fabricant;
-        this.model = model;
-        this.capacitat = capacitat;
-        classes = new Classe[4];
-        posicioClasses = 0;
-    }
+	// GETTERS & SETTERS
+	public String getCodi() {
+		return codi;
+	}
 
-    /*
-    M√®todes accessors
-     */
-    public String getCodi() {
-        return codi;
-    }
+	public void setCodi(String codi) {
+		this.codi = codi;
+	}
 
-    public void setCodi(String codi) {
-        this.codi = codi;
-    }
+	public String getFabricant() {
+		return fabricant;
+	}
 
-    public String getFabricant() {
-        return fabricant;
-    }
+	public void setFabricant(String fabricant) {
+		this.fabricant = fabricant;
+	}
 
-    public void setFabricant(String fabricant) {
-        this.fabricant = fabricant;
-    }
+	public String getModel() {
+		return model;
+	}
 
-    public String getModel() {
-        return model;
-    }
+	public void setModel(String model) {
+		this.model = model;
+	}
 
-    public void setModel(String model) {
-        this.model = model;
-    }
+	public int getCapacitat() {
+		return capacitat;
+	}
 
-    public int getCapacitat() {
-        return capacitat;
-    }
+	public void setCapacitat(int capacitat) {
+		this.capacitat = capacitat;
+	}
 
-    public void setCapacitat(int capacitat) {
-        this.capacitat = capacitat;
-    }
+	public Classe[] getClasses() {
+		return classes;
+	}
 
-    public Classe[] getClasses() {
-        return classes;
-    }
+	public void setClasses(Classe[] classes) {
+		this.classes = classes;
+	}
 
-    public void setClasses(Classe[] classes) {
-        this.classes = classes;
-    }
+	public int getPosicioClasses() {
+		return posicioClasses;
+	}
 
-    public int getPosicioClasses() {
-        return posicioClasses;
-    }
+	public void setPosicioClasses(int posicioClasses) {
+		this.posicioClasses = posicioClasses;
+	}
 
-    public void setPosicioClasses(int posicioClasses) {
-        this.posicioClasses = posicioClasses;
-    }
+	public static Avio nouAvio() {
+		String codi, fabricant, model;
+		int capacitat;
 
+		System.out.println("\nCodi de l'aviÛ:");
+		codi = DADES.next();
+		DADES.nextLine(); // Neteja de buffer
+		System.out.println("\nFabricant de l'aviÛ:");
+		fabricant = DADES.nextLine();
+		System.out.println("\nModel de l'aviÛ:");
+		model = DADES.nextLine();
+		System.out.println("\nCapacitat de l'aviÛ:");
+		capacitat = DADES.nextInt();
 
-    /*
-    Par√†metres: cap
-    Accions:
-    - Demanar a l'usuari les dades per consola per crear un nou avi√≥.
-    Les dades a demanar s√≥n les que necessita el constructor.
-    - Tamb√© heu de tenir en compte que el fabricant o model, no tenen perqu√® estar 
-    formats per una √∫nica paraula, per exemple, Airbus Company o Boing 777
-    Retorn: El nou avi√≥.
-     */
-    public static Avio nouAvio() {
-        String codi, fabricant, model;
-        int capacitat;
+		return new Avio(codi, fabricant, model, capacitat);
+	}
 
-        System.out.println("\nCodi de l'avi√≥:");
-        codi = DADES.next();
-        DADES.nextLine(); //Neteja de buffer
-        System.out.println("\nFabricant de l'avi√≥:");
-        fabricant = DADES.nextLine();
-        System.out.println("\nModel de l'avi√≥:");
-        model = DADES.nextLine();
-        System.out.println("\nCapacitat de l'avi√≥:");
-        capacitat = DADES.nextInt();
+	// AFEGIR CLASSE A AVI”
+	public void afegirClasse() {
 
-        return new Avio(codi, fabricant, model, capacitat);
-    }
+		int capacitatClasses = 0;
 
-    /*
-     Par√†metres: cap
-     Accions:
-     - Demanar a l'usuari que introdueixi les noves dades de l'objecte actual
-     i modificar els atributs corresponents d'aquest objecte.
-     - Li heu de mostrar a l'usuari el valor actual dels atributs de l'objecte
-     actual, abans de modificar-los
-     Retorn: cap
-     */
-    public void modificarAvio() {
-        
-        System.out.println("\nEl codi de l'avi√≥ √©s: "+codi);
-        System.out.println("\nQuin √©s el nou Codi de l'avi√≥?");
-        codi = DADES.next();
-        DADES.nextLine(); //Neteja de buffer
-        System.out.println("\nEl fabricant de l'avi√≥ √©s: "+ fabricant);
-        System.out.println("\nQuin √©s el nou fabricant de l'avi√≥?");
-        fabricant = DADES.nextLine();
-        System.out.println("\nEl model de l'avi√≥ √©s: "+model);
-        System.out.println("\nQuin √©s el nou model de l'avi√≥?");
-        model = DADES.nextLine();
-        System.out.println("\nLa capacitat de l'avi√≥ √©s: "+capacitat);
-        System.out.println("\nQuina √©s la nova capacitat de l'avi√≥?");
-        capacitat = DADES.nextInt();
+		Classe classe = Classe.novaClasse();
 
-    }
+		if (seleccionarClasse(classe.getNom()) == -1) { // La classe no existeix
 
-    public void mostrarAvio() {
-        System.out.println("\nLes dades de l'avi√≥ amb codi " + codi + " s√≥n:");
-        System.out.println("\nFabricant: " + fabricant);
-        System.out.println("\nModel: " + model);
-        System.out.println("\nCapacitat: " + capacitat);
-    }
+			for (int i = 0; i < posicioClasses; i++) {
+				capacitatClasses += classes[i].getCapacitat();
+			}
 
-    /*
-     Par√†metres: cap
-     Accions:
-     - Afegeix una nova classe al vector de classes de l'avi√≥ actual si aquesta encara 
-     no s'ha afegit. S'ha de comprovar si s'ha afegit fent servir el m√®tode pertinent 
-     d'aquesta classe, i actualitzar la posici√≥ del vector de classes.
-     - Abans d'afegir la classe, tamb√© heu de comprovar que la seva capacitat sumada
-     a la capacitat de les altres classes de l'avi√≥, no superi la capacitat total
-     de l'avi√≥.
-     - Si l'ingredient ja s'havia afegit o b√© la seva capacitat sumada a les capacitats 
-     de les altres classes supera la capacitat total de l'avi√≥, no s'afegir√† de nou i 
-     li mostrarem a l'usuari el missatge "\nLa classe no s'ha pogut afegir".
-     Retorn: cap
-     */
-    public void afegirClasse() {
+			if (capacitatClasses + classe.getCapacitat() <= capacitat) {
+				classes[posicioClasses] = classe;
+			}
 
-        int capacitatClasses = 0;
+			posicioClasses++;
 
-        Classe classe = Classe.novaClasse();
+		} else if (seleccionarClasse(classe.getNom()) != -1 || capacitatClasses + classe.getCapacitat() > capacitat) {
+			System.out.println("\nLa classe no s'ha pogut afegir");
+		}
 
-        if (seleccionarClasse(classe.getNom()) == -1) { //La classe no existeix
+	}
 
-            for (int i = 0; i < posicioClasses; i++) {
-                capacitatClasses += classes[i].getCapacitat();
-            }
+	public int seleccionarClasse(String nom) {
 
-            if (capacitatClasses + classe.getCapacitat() <= capacitat) {
-                classes[posicioClasses] = classe;
-            }
+		boolean trobat = false;
+		int pos = -1;
 
-            posicioClasses++;
+		for (int i = 0; i < posicioClasses && !trobat; i++) {
+			if (classes[i].getNom().equals(nom)) {
+				pos = i;
+				trobat = true;
+			}
+		}
 
-        } else if (seleccionarClasse(classe.getNom()) != -1 || capacitatClasses + classe.getCapacitat() > capacitat) {
-            System.out.println("\nLa classe no s'ha pogut afegir");
-        }
+		return pos;
+	}
 
-    }
+	public void mostrarComponent() {
+		System.out.println("\nLes dades de l'aviÛ amb codi " + codi + " sÛn:");
+		System.out.println("\nFabricant: " + fabricant);
+		System.out.println("\nModel: " + model);
+		System.out.println("\nCapacitat: " + capacitat);
+	}
 
-    public int seleccionarClasse(String nom) {
+	public void modificarComponent() throws ParseException {
+		System.out.println("\nEl codi de l'aviÛ Ès: " + codi);
+		codi = (String) demanarDades("\nQuin Ès el nou Codi de l'aviÛ?", 2);
 
-        boolean trobat = false;
-        int pos = -1;
+		System.out.println("\nEl fabricant de l'aviÛ Ès: " + fabricant);
+		fabricant = (String) demanarDades("\nQuin Ès el nou fabricant de l'aviÛ?", 4);
 
-        for (int i = 0; i < posicioClasses && !trobat; i++) {
-            if (classes[i].getNom().equals(nom)) {
-                pos = i;
-                trobat = true;
-            }
-        }
+		System.out.println("\nEl model de l'aviÛ Ès: " + model);
+		model = (String) demanarDades("\nQuin Ès el nou model de l'aviÛ?", 4);
 
-        return pos;
-    }
+		System.out.println("\nLa capacitat de l'aviÛ Ès: " + capacitat);
+		capacitat = (int) demanarDades("\nQuina Ès la nova capacitat de l'aviÛ?", 1);
+	}
 
 }
