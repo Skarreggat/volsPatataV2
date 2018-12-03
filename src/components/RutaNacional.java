@@ -69,7 +69,7 @@ public class RutaNacional extends Ruta {
         System.out.println("\nDistància de la ruta nacional:");
         distancia = DADES.nextDouble();
 
-        return new RutaNacional(codi, aeroportOri, aeroportDes, pais, distancia);
+        return new RutaNacional(codi,pais, aeroportOri, aeroportDes,  distancia);
 
     }
 
@@ -101,7 +101,7 @@ public class RutaNacional extends Ruta {
         System.out.println("\nEl país de la ruta nacional és:" + pais);
         System.out.println("\nQuin és el nou país de la ruta nacional:");
         pais = DADES.nextLine();
-        System.out.println("\nLa distància de la ruta nacional és:");
+        System.out.println("\nLa distància de la ruta nacional és:"+distancia);
         System.out.println("\nQuina és la nova distància de la ruta nacional?");
         distancia = DADES.nextDouble();
     }
