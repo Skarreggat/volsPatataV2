@@ -60,18 +60,18 @@ public abstract class Ruta implements Component {
     
     
 
-    public void modificarComponent() throws ParseException{
+    public void modificarComponent() {
         
         System.out.println("\nEl codi de la ruta és:" + codi);
         codi=(String)demanarDades("\nQuin és el nou codi de la ruta ?",2);
         
-        System.out.println("\nL'aeroport d'origen de la ruta nacional és:" + aeroportOri);
+        System.out.println("\nL'aeroport d'origen de la ruta és:" + aeroportOri);
         aeroportOri=(String)demanarDades("\nQuin és el nou l'aeroport d'origen de la ruta ?",2);
 
-        System.out.println("\nL'aeroport de destí de la ruta nacional és:" + aeroportDes);
+        System.out.println("\nL'aeroport de destí de la ruta és:" + aeroportDes);
         aeroportDes=(String)demanarDades("\nQuin és el nou l'aeroport de destí de la ruta ?",2);
 
-        System.out.println("\nLa distància de la ruta nacional és:"+distancia);
+        System.out.println("\nLa distància de la ruta és:"+distancia);
         distancia=(double)demanarDades("\nQuina és la nova distància de la ruta ?",3);
 
         

@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class RutaNacional extends Ruta {
 
-    private final static Scanner DADES = new Scanner(System.in);
+    
 
   
     private String pais;
@@ -88,23 +88,12 @@ public class RutaNacional extends Ruta {
     public void modificarRutaNacional() {
 
         
-        System.out.println("\nEl codi de la ruta nacional és:" + codi);
-        System.out.println("\nQuin és el nou codi de la ruta nacional?");
-        codi = DADES.next();
-        DADES.nextLine(); //Neteja de buffer
-        System.out.println("\nL'aeroport d'origen de la ruta nacional és:" + aeroportOri);
-        System.out.println("\nQuin és el nou l'aeroport d'origen de la ruta nacional?");
-        aeroportOri = DADES.nextLine();
-        System.out.println("\nL'aeroport de destí de la ruta nacional és:" + aeroportDes);
-        System.out.println("\nQuin és el nou l'aeroport de destí de la ruta nacional?");
-        aeroportDes = DADES.nextLine();
+        super.modificarComponent();
         System.out.println("\nEl país de la ruta nacional és:" + pais);
         System.out.println("\nQuin és el nou país de la ruta nacional:");
         pais = DADES.nextLine();
-        System.out.println("\nLa distància de la ruta nacional és:"+distancia);
-        System.out.println("\nQuina és la nova distància de la ruta nacional?");
-        distancia = DADES.nextDouble();
     }
+
 
     public void mostrarRutaNacional() {
         super.mostrarComponent();
