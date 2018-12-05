@@ -82,7 +82,7 @@ public abstract class Tripulant implements Component{
         System.out.println("\nL'edat actual del Component és:" + edat);
         edat = (int)demanarDades("\nQuina és la nova edat del Component?", 1);
         System.out.println("Les hores de vol actuals del Component són:" + horesVol);
-        edat = (int)demanarDades("\nQuines són les hores de vol actuals del Component:", 1);
+        horesVol = (int)demanarDades("\nQuines són les hores de vol actuals del Component:", 1);
     }
     
     public void mostrarComponent() {
