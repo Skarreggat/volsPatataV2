@@ -13,11 +13,11 @@ public abstract class Tripulant implements Component{
     protected String rang;
     
     public Tripulant(String pPassaport, String pNom, int pEdat, int pHoresVol) {
-        this.passaport = passaport;
-        this.nom = nom;
-        this.edat = edat;
+        this.passaport = pPassaport;
+        this.nom = pNom;
+        this.edat = pEdat;
         dataAlta = new Date();
-        this.horesVol = horesVol;
+        this.horesVol = pHoresVol;
         this.rang = null;
     }
     

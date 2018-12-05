@@ -10,15 +10,13 @@ import java.util.Scanner;
  *
  * @author root
  */
-public class RutaNacional {
+public class RutaNacional extends Ruta {
 
     private final static Scanner DADES = new Scanner(System.in);
 
-    private String codi;
+  
     private String pais;
-    private String aeroportOri;
-    private String aeroportDes;
-    private double distancia;
+
 
     /*
      CONSTRUCTOR
@@ -27,23 +25,15 @@ public class RutaNacional {
      - Assignar als atributs els valors passats com a paràmetres.
      */
     public RutaNacional(String codi, String pais, String aeroportOri, String aeroportDes, double distancia) {
-        this.codi = codi;
+        super(codi,aeroportOri, aeroportDes,distancia);
         this.pais = pais;
-        this.aeroportOri = aeroportOri;
-        this.aeroportDes = aeroportDes;
-        this.distancia = distancia;
+ 
     }
 
     /*
     Mètodes accessors
      */
-    public String getCodi() {
-        return codi;
-    }
-
-    public void setCodi(String codi) {
-        this.codi = codi;
-    }
+    
 
     public String getPais() {
         return pais;
@@ -53,29 +43,6 @@ public class RutaNacional {
         this.pais = pais;
     }
 
-    public String getAeroportOri() {
-        return aeroportOri;
-    }
-
-    public void setAeroportOri(String aeroportOri) {
-        this.aeroportOri = aeroportOri;
-    }
-
-    public String getAeroportDes() {
-        return aeroportDes;
-    }
-
-    public void setAeroportDes(String aeroportDes) {
-        this.aeroportDes = aeroportDes;
-    }
-
-    public double getDistancia() {
-        return distancia;
-    }
-
-    public void setDistancia(double distancia) {
-        this.distancia = distancia;
-    }
 
     /*
     Paràmetres: cap
@@ -102,7 +69,7 @@ public class RutaNacional {
         System.out.println("\nDistància de la ruta nacional:");
         distancia = DADES.nextDouble();
 
-        return new RutaNacional(codi, aeroportOri, aeroportDes, pais, distancia);
+        return new RutaNacional(codi,pais, aeroportOri, aeroportDes,  distancia);
 
     }
 
@@ -116,8 +83,11 @@ public class RutaNacional {
     
      Retorn: cap
      */
+    
+ 
     public void modificarRutaNacional() {
 
+        
         System.out.println("\nEl codi de la ruta nacional és:" + codi);
         System.out.println("\nQuin és el nou codi de la ruta nacional?");
         codi = DADES.next();
@@ -131,16 +101,14 @@ public class RutaNacional {
         System.out.println("\nEl país de la ruta nacional és:" + pais);
         System.out.println("\nQuin és el nou país de la ruta nacional:");
         pais = DADES.nextLine();
-        System.out.println("\nLa distància de la ruta nacional és:");
+        System.out.println("\nLa distància de la ruta nacional és:"+distancia);
         System.out.println("\nQuina és la nova distància de la ruta nacional?");
         distancia = DADES.nextDouble();
     }
 
     public void mostrarRutaNacional() {
-        System.out.println("\nLes dades de la ruta nacional amb codi " + codi + " són:");
+        super.mostrarComponent();
         System.out.println("\nPaís: " + pais);
-        System.out.println("\nAeroport d'origen: " + aeroportOri);
-        System.out.println("\nAeroport de destí: " + aeroportDes);
-        System.out.println("\nDistància: " + distancia);
+        
     }
 }
