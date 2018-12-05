@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author root
  */
-public class RutaIntercontinental extends Ruta {
+public class RutaIntercontinental extends RutaInternacional {
     
     
 
@@ -30,9 +30,8 @@ public class RutaIntercontinental extends Ruta {
      */
 
     public RutaIntercontinental(String codi, String aeroportOri, String aeroportDes, String paisOri, String paisDes, String continentOri, String continentDes, double distancia) {
-       super(codi,aeroportOri, aeroportDes,distancia);
-        this.paisOri = paisOri;
-        this.paisDes = paisDes;
+       super(codi,aeroportOri, aeroportDes,paisOri,paisDes,distancia);
+
         this.continentOri = continentOri;
         this.continentDes = continentDes;
         
@@ -43,21 +42,6 @@ public class RutaIntercontinental extends Ruta {
      */
     
 
-    public String getPaisOri() {
-        return paisOri;
-    }
-
-    public void setPaisOri(String paisOri) {
-        this.paisOri = paisOri;
-    }
-
-    public String getPaisDes() {
-        return paisDes;
-    }
-
-    public void setPaisDes(String paisDes) {
-        this.paisDes = paisDes;
-    }
 
     public String getContinentOri() {
         return continentOri;
@@ -123,26 +107,19 @@ public class RutaIntercontinental extends Ruta {
     public void modificarRutaIntercontinental() {
         
         super.modificarComponent();
-        System.out.println("\nEl país d'origen de la ruta intercontinental és:"+paisOri);
-        System.out.println("\nQuin és el nou país d'origen de la ruta intercontinental:");
-        paisOri = DADES.nextLine();
-        System.out.println("\nEl país de destí de la ruta intercontinental és:"+paisDes);
-        System.out.println("\nQuin és el nou país de destí de la ruta intercontinental?");
-        paisDes = DADES.nextLine();
+
         System.out.println("\nEl continent d'origen de la ruta intercontinental és:"+continentOri);
-        System.out.println("\nQuin és el nou continent d'origen de la ruta intercontinental?");
-        continentOri = DADES.nextLine();
+        continentOri = (String)demanarDades("\nQuin és el nou continent d'origen de la ruta intercontinental?",2);
         System.out.println("\nEl continent de destí de la ruta intercontinental és:"+continentDes);
-        System.out.println("\nQuin és el nou continent de destí de la ruta intercontinental?");
-        continentDes = DADES.nextLine();
+        continentDes = (String)demanarDades("\nQuin és el nou continent de destí de la ruta intercontinental?",2);
 
 
     }
 
     public void mostrarRutaIntercontinental() {
         super.mostrarComponent();
-        System.out.println("\nPaís d'origen: " + paisOri);
-        System.out.println("\nPaís de destí: " + paisDes);
+
+        
         System.out.println("\nContinent d'origen: " + continentOri);
         System.out.println("\nContinent de destí: " + continentDes);
         

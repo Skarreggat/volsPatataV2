@@ -90,8 +90,7 @@ public class RutaNacional extends Ruta {
         
         super.modificarComponent();
         System.out.println("\nEl país de la ruta nacional és:" + pais);
-        System.out.println("\nQuin és el nou país de la ruta nacional:");
-        pais = DADES.nextLine();
+        pais = (String)demanarDades("\nQuin és el nou país de la ruta nacional:",2);
     }
 
 

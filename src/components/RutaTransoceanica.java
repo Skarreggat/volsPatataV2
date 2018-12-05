@@ -11,12 +11,10 @@ import java.util.Scanner;
  *
  * @author root
  */
-public class RutaTransoceanica extends Ruta {
+public class RutaTransoceanica extends RutaIntercontinental {
 
-    private String paisOri;
-    private String paisDes;
-    private String continentOri;
-    private String continentDes;
+
+
     private String ocea;
 
 
@@ -28,11 +26,8 @@ public class RutaTransoceanica extends Ruta {
      */
     public RutaTransoceanica(String codi, String aeroportOri, String aeroportDes, String paisOri, String paisDes, String continentOri, String continentDes, String ocea, double distancia) {
 
-        super(codi, aeroportOri, aeroportDes, distancia);
-        this.paisOri = paisOri;
-        this.paisDes = paisDes;
-        this.continentOri = continentOri;
-        this.continentDes = continentDes;
+        super(codi, aeroportOri, aeroportDes,paisOri,paisDes,continentOri,continentDes, distancia);
+  
         this.ocea = ocea;
 
     }
@@ -40,39 +35,6 @@ public class RutaTransoceanica extends Ruta {
     /*
     Mètodes accessors
      */
-
-
-    public String getPaisOri() {
-        return paisOri;
-    }
-
-    public void setPaisOri(String paisOri) {
-        this.paisOri = paisOri;
-    }
-
-    public String getPaisDes() {
-        return paisDes;
-    }
-
-    public void setPaisDes(String paisDes) {
-        this.paisDes = paisDes;
-    }
-
-    public String getContinentOri() {
-        return continentOri;
-    }
-
-    public void setContinentOri(String continentOri) {
-        this.continentOri = continentOri;
-    }
-
-    public String getContinentDes() {
-        return continentDes;
-    }
-
-    public void setContinentDes(String continentDes) {
-        this.continentDes = continentDes;
-    }
 
     public String getOcea() {
         return ocea;
@@ -135,21 +97,9 @@ public class RutaTransoceanica extends Ruta {
         super.modificarComponent();
 
         
-        System.out.println("\nEl país d'origen de la ruta transoceànica és:" + paisOri);
-        System.out.println("\nQuin és el nou país d'origen de la ruta transoceànica:");
-        paisOri = DADES.nextLine();
-        System.out.println("\nEl país de destí de la ruta transoceànica és:" + paisDes);
-        System.out.println("\nQuin és el nou país de destí de la ruta transoceànica?");
-        paisDes = DADES.nextLine();
-        System.out.println("\nEl continent d'origen de la ruta transoceànica és:" + continentOri);
-        System.out.println("\nQuin és el nou continent d'origen de la ruta transoceànica?");
-        continentOri = DADES.nextLine();
-        System.out.println("\nEl continent de destí de la ruta transoceànica és:" + continentDes);
-        System.out.println("\nQuin és el nou continent de destí de la ruta transoceànica?");
-        continentDes = DADES.nextLine();
+  
         System.out.println("\nL'oceà que sobrevola la ruta transoceànica és:" + ocea);
-        System.out.println("\nQuin és el nou oceà que sobrevola la ruta transoceànica?");
-        ocea = DADES.nextLine();
+        ocea = (String)demanarDades("\nQuin és el nou oceà que sobrevola la ruta transoceànica?",2);
 
 
     }
@@ -157,10 +107,6 @@ public class RutaTransoceanica extends Ruta {
     public void mostrarRutaTransoceanica() {
         
         super.mostrarComponent();
-        System.out.println("\nPaís d'origen: " + paisOri);
-        System.out.println("\nPaís de destí: " + paisDes);
-        System.out.println("\nContinent d'origen: " + continentOri);
-        System.out.println("\nContinent de destí: " + continentDes);
         System.out.println("\nOceà que sobrevola: " + ocea);
 
     }

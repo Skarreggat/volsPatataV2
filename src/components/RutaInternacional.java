@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class RutaInternacional extends Ruta {
 
-    
+
 
    
     private String paisOri;
@@ -101,11 +101,10 @@ public class RutaInternacional extends Ruta {
 
         super.modificarComponent();
         System.out.println("\nEl país d'origen de la ruta internacional és:" + paisOri);
-        System.out.println("\nQuin és el nou país d'origen de la ruta internacional:");
-        paisOri = DADES.nextLine();
+        paisOri = (String)demanarDades("\nQuin és el nou país d'origen de la ruta internacional:",2);
+        
         System.out.println("\nEl país de destí de la ruta internacional és:" + paisDes);
-        System.out.println("\nQuin és el nou país de destí de la ruta internacional?");
-        paisDes = DADES.nextLine();
+        paisDes = (String)demanarDades("\nQuin és el nou país de destí de la ruta internacional?",2);
 
     }
 
