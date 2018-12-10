@@ -357,45 +357,43 @@ public class Companyia implements Component {
 	 */
 	public void afegirRutaVol(int tipus) {
 		Vol volSel;
-		int pos = seleccionarVol();
-
-		if (pos >= 0) {
-
-			volSel = getVols()[pos];
-
+		int pos = seleccionarComponent(4, null);
+		if (pos >= 0 && components[pos] instanceof Vol) {
+			volSel = (Vol) components[pos];
 			switch (tipus) {
 			case 1:
-				pos = seleccionarRutaNacional();
-				if (pos >= 0) {
-					volSel.setRuta(getRutesNacionals()[pos]);
+				pos = seleccionarComponent(2, null);
+				if (pos >= 0 && components[pos] instanceof RutaNacional) {
+					volSel.setRuta((RutaNacional) components[pos]);
+				} else {
+					System.out.println("\nNo existeix aquesta ruta nacional");
 				}
 				break;
 			case 2:
-				pos = seleccionarRutaInternacional();
-				if (pos >= 0) {
-					volSel.setRuta(getRutesInternacionals()[pos]);
+				pos = seleccionarComponent(2, null);
+				if (pos >= 0 && components[pos] instanceof RutaInternacional) {
+					volSel.setRuta((RutaInternacional) components[pos]);
+				} else {
+					System.out.println("\nNo existeix aquesta ruta internacional");
 				}
 				break;
 			case 3:
-				pos = seleccionarRutaIntercontinental();
-				if (pos >= 0) {
-					volSel.setRuta(getRutesIntercontinentals()[pos]);
+				pos = seleccionarComponent(2, null);
+				if (pos >= 0 && components[pos] instanceof RutaIntercontinental) {
+					volSel.setRuta((RutaIntercontinental) components[pos]);
+				} else {
+					System.out.println("\nNo existeix aquesta ruta intercontinental");
 				}
 				break;
 			default:
-				pos = seleccionarRutaTransoceanica();
-				if (pos >= 0) {
-					volSel.setRuta(getRutesTransoceaniques()[pos]);
+				pos = seleccionarComponent(2, null);
+				if (pos >= 0 && components[pos] instanceof RutaTransoceanica) {
+					volSel.setRuta((RutaTransoceanica) components[pos]);
+				} else {
+					System.out.println("\nNo existeix aquesta ruta transoceànica");
 				}
 				break;
 			}
-
-			if (pos < 0) {
-				System.out.println("\nNo existeix aquesta ruta");
-			} else {
-				volSel.setTipusRuta(tipus);
-			}
-
 		} else {
 			System.out.println("\nNo existeix aquest vol");
 		}
