@@ -200,6 +200,9 @@ public class Aplicacio {
 						}
 					}
 					break;
+				default:
+					System.out.println("\nS'ha de seleccionar una opció correcta del menú.");
+					break;
 				}
 			} while (opcio != 0);
 			break;
@@ -232,6 +235,9 @@ public class Aplicacio {
 							companyiaActual.getComponents()[i].mostrarComponent();
 						}
 					}
+					break;
+				default:
+					System.out.println("\nS'ha de seleccionar una opció correcta del menú.");
 					break;
 				}
 			} while (opcio != 0);
@@ -266,6 +272,9 @@ public class Aplicacio {
 						}
 					}
 					break;
+				default:
+					System.out.println("\nS'ha de seleccionar una opció correcta del menú.");
+					break;
 				}
 			} while (opcio != 0);
 			break;
@@ -298,6 +307,9 @@ public class Aplicacio {
 							companyiaActual.getComponents()[i].mostrarComponent();
 						}
 					}
+					break;
+				default:
+					System.out.println("\nS'ha de seleccionar una opció correcta del menú.");
 					break;
 				}
 			} while (opcio != 0);
@@ -332,6 +344,9 @@ public class Aplicacio {
 						}
 					}
 					break;
+				default:
+					System.out.println("\nS'ha de seleccionar una opció correcta del menú.");
+					break;
 				}
 			} while (opcio != 0);
 			break;
@@ -365,6 +380,9 @@ public class Aplicacio {
 						}
 					}
 					break;
+				default:
+					System.out.println("\nS'ha de seleccionar una opció correcta del menú.");
+					break;
 				}
 			} while (opcio != 0);
 			break;
@@ -397,6 +415,9 @@ public class Aplicacio {
 							companyiaActual.getComponents()[i].mostrarComponent();
 						}
 					}
+					break;
+				default:
+					System.out.println("\nS'ha de seleccionar una opció correcta del menú.");
 					break;
 				}
 			} while (opcio != 0);
@@ -478,6 +499,9 @@ public class Aplicacio {
 							companyiaActual.getComponents()[i].mostrarComponent();
 						}
 					}
+					break;
+				default:
+					System.out.println("\nS'ha de seleccionar una opció correcta del menú.");
 					break;
 				}
 			} while (opcio != 0);

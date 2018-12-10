@@ -4,32 +4,30 @@
  */
 package components;
 
-import java.util.Scanner;
-
 /**
  *
  * @author root
  */
-public class TCP extends Tripulant{
+public class TCP extends Tripulant {
 
-    public TCP(String passaport, String nom, int edat, int horesVol) {
-        super(passaport, nom, edat, horesVol);
-    }
-    
-    public static TCP nouTCP() {
-        String passaport, nom;
-        int edat, hores;
-        System.out.println("\nPassaport del tripulant:");
-        passaport = DADES.next();
-        DADES.nextLine(); //Neteja de buffer
-        System.out.println("\nNom del tripulant:");
-        nom = DADES.nextLine();
-        System.out.println("\nEdat del tripulant:");
-        edat = DADES.nextInt();
+	public TCP(String passaport, String nom, int edat, int horesVol) {
+		super(passaport, nom, edat, horesVol);
+	}
 
-        System.out.println("\nHores de vol del tripulant:");
-        hores = DADES.nextInt();
+	public static TCP nouTCP() {
+		String passaport, nom;
+		int edat, hores;
+		System.out.println("\nPassaport del tripulant:");
+		passaport = DADES.next();
+		DADES.nextLine(); // Neteja de buffer
+		System.out.println("\nNom del tripulant:");
+		nom = DADES.nextLine();
+		System.out.println("\nEdat del tripulant:");
+		edat = DADES.nextInt();
 
-        return new TCP(passaport, nom, edat, hores);
-    }
+		System.out.println("\nHores de vol del tripulant:");
+		hores = DADES.nextInt();
+
+		return new TCP(passaport, nom, edat, hores);
+	}
 }
