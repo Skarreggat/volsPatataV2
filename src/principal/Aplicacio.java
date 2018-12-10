@@ -117,7 +117,7 @@ public class Aplicacio {
 		} while (opcio != 0);
 	}
 
-	public static void menuCompanyes() {
+	public static void menuCompanyes() throws ParseException {
 		int opcio = 0;
 
 		do {
@@ -149,14 +149,14 @@ public class Aplicacio {
 			case 3:
 				pos = selectCompanyia();
 				if (pos >= 0) {
-					companyies[pos].modificarCompanyia();
+					companyies[pos].modificarComponent();
 				} else {
 					System.out.println("\nNo existeix aquesta companyia");
 				}
 				break;
 			case 4:
 				for (int i = 0; i < posicioCompanyies; i++) {
-					companyies[i].mostrarCompanyia();
+					companyies[i].mostrarComponent();
 				}
 				break;
 			default:
@@ -166,7 +166,7 @@ public class Aplicacio {
 		} while (opcio != 0);
 	}
 
-	public static void menuComponents(int tipus) {
+	public static void menuComponents(int tipus) throws ParseException {
 		int opcio = -1;
 		int pos = -1;
 		switch (tipus) {
@@ -186,8 +186,8 @@ public class Aplicacio {
 					break;
 				case 2:
 					pos = companyiaActual.seleccionarComponent(1, null);
-					if (pos >= 0 && companyiaActual.getComponents()[pos] instanceof Avio) {
-						Avio avio = (Avio) companyiaActual.getComponents()[pos];
+					if (pos >= 0 && companyiaActual.getComponent()[pos] instanceof Avio) {
+						Avio avio = (Avio) companyiaActual.getComponent()[pos];
 						avio.modificarComponent();
 					} else {
 						System.out.println("\nNo existeix aquest avió");
@@ -195,8 +195,8 @@ public class Aplicacio {
 					break;
 				case 3:
 					for (int i = 0; i < companyiaActual.getPosicioComponents(); i++) {
-						if (companyiaActual.getComponents()[i] instanceof Avio) {
-							Avio avio = (Avio) companyiaActual.getComponents()[i];
+						if (companyiaActual.getComponent()[i] instanceof Avio) {
+							Avio avio = (Avio) companyiaActual.getComponent()[i];
 							avio.mostrarComponent();
 						}
 					}
@@ -223,8 +223,8 @@ public class Aplicacio {
 					break;
 				case 2:
 					pos = companyiaActual.seleccionarComponent(2, null);
-					if (pos >= 0 && companyiaActual.getComponents()[pos] instanceof RutaNacional) {
-						RutaNacional rn = (RutaNacional) companyiaActual.getComponents()[pos];
+					if (pos >= 0 && companyiaActual.getComponent()[pos] instanceof RutaNacional) {
+						RutaNacional rn = (RutaNacional) companyiaActual.getComponent()[pos];
 						rn.modificarComponent();
 					} else {
 						System.out.println("\nNo existeix aquest avió");
@@ -232,8 +232,8 @@ public class Aplicacio {
 					break;
 				case 3:
 					for (int i = 0; i < companyiaActual.getPosicioComponents(); i++) {
-						if (companyiaActual.getComponents()[i] instanceof RutaNacional) {
-							RutaNacional rn = (RutaNacional) companyiaActual.getComponents()[i];
+						if (companyiaActual.getComponent()[i] instanceof RutaNacional) {
+							RutaNacional rn = (RutaNacional) companyiaActual.getComponent()[i];
 							rn.mostrarComponent();
 						}
 					}
@@ -260,8 +260,8 @@ public class Aplicacio {
 					break;
 				case 2:
 					pos = companyiaActual.seleccionarComponent(2, null);
-					if (pos >= 0 && companyiaActual.getComponents()[pos] instanceof RutaInternacional) {
-						RutaInternacional ri = (RutaInternacional) companyiaActual.getComponents()[pos];
+					if (pos >= 0 && companyiaActual.getComponent()[pos] instanceof RutaInternacional) {
+						RutaInternacional ri = (RutaInternacional) companyiaActual.getComponent()[pos];
 						ri.modificarComponent();
 					} else {
 						System.out.println("\nNo existeix aquesta ruta internacional");
@@ -269,8 +269,8 @@ public class Aplicacio {
 					break;
 				case 3:
 					for (int i = 0; i < companyiaActual.getPosicioComponents(); i++) {
-						if (companyiaActual.getComponents()[i] instanceof RutaInternacional) {
-							RutaInternacional ri = (RutaInternacional) companyiaActual.getComponents()[i];
+						if (companyiaActual.getComponent()[i] instanceof RutaInternacional) {
+							RutaInternacional ri = (RutaInternacional) companyiaActual.getComponent()[i];
 							ri.mostrarComponent();
 						}
 					}
@@ -297,8 +297,8 @@ public class Aplicacio {
 					break;
 				case 2:
 					pos = companyiaActual.seleccionarComponent(2, null);
-					if (pos >= 0 && companyiaActual.getComponents()[pos] instanceof RutaIntercontinental) {
-						RutaIntercontinental ri = (RutaIntercontinental) companyiaActual.getComponents()[pos];
+					if (pos >= 0 && companyiaActual.getComponent()[pos] instanceof RutaIntercontinental) {
+						RutaIntercontinental ri = (RutaIntercontinental) companyiaActual.getComponent()[pos];
 						ri.modificarComponent();
 					} else {
 						System.out.println("\nNo existeix aquesta ruta intercontinental");
@@ -306,8 +306,8 @@ public class Aplicacio {
 					break;
 				case 3:
 					for (int i = 0; i < companyiaActual.getPosicioComponents(); i++) {
-						if (companyiaActual.getComponents()[i] instanceof RutaIntercontinental) {
-							RutaIntercontinental ri = (RutaIntercontinental) companyiaActual.getComponents()[i];
+						if (companyiaActual.getComponent()[i] instanceof RutaIntercontinental) {
+							RutaIntercontinental ri = (RutaIntercontinental) companyiaActual.getComponent()[i];
 							ri.mostrarComponent();
 						}
 					}
@@ -334,8 +334,8 @@ public class Aplicacio {
 					break;
 				case 2:
 					pos = companyiaActual.seleccionarComponent(2, null);
-					if (pos >= 0 && companyiaActual.getComponents()[pos] instanceof RutaTransoceanica) {
-						RutaTransoceanica rt = (RutaTransoceanica) companyiaActual.getComponents()[pos];
+					if (pos >= 0 && companyiaActual.getComponent()[pos] instanceof RutaTransoceanica) {
+						RutaTransoceanica rt = (RutaTransoceanica) companyiaActual.getComponent()[pos];
 						rt.modificarComponent();
 					} else {
 						System.out.println("\nNo existeix aquesta ruta transoceànica");
@@ -343,8 +343,8 @@ public class Aplicacio {
 					break;
 				case 3:
 					for (int i = 0; i < companyiaActual.getPosicioComponents(); i++) {
-						if (companyiaActual.getComponents()[i] instanceof RutaTransoceanica) {
-							RutaTransoceanica rt = (RutaTransoceanica) companyiaActual.getComponents()[i];
+						if (companyiaActual.getComponent()[i] instanceof RutaTransoceanica) {
+							RutaTransoceanica rt = (RutaTransoceanica) companyiaActual.getComponent()[i];
 							rt.mostrarComponent();
 						}
 					}
@@ -371,8 +371,8 @@ public class Aplicacio {
 					break;
 				case 2:
 					pos = companyiaActual.seleccionarComponent(3, null);
-					if (pos >= 0 && companyiaActual.getComponents()[pos] instanceof TripulantCabina) {
-						TripulantCabina tcv = (TripulantCabina) companyiaActual.getComponents()[pos];
+					if (pos >= 0 && companyiaActual.getComponent()[pos] instanceof TripulantCabina) {
+						TripulantCabina tcv = (TripulantCabina) companyiaActual.getComponent()[pos];
 						tcv.modificarComponent();
 					} else {
 						System.out.println("\nNo existeix aquest tripulant de cabina");
@@ -380,8 +380,8 @@ public class Aplicacio {
 					break;
 				case 3:
 					for (int i = 0; i < companyiaActual.getPosicioComponents(); i++) {
-						if (companyiaActual.getComponents()[i] instanceof TripulantCabina) {
-							TripulantCabina tcv = (TripulantCabina) companyiaActual.getComponents()[i];
+						if (companyiaActual.getComponent()[i] instanceof TripulantCabina) {
+							TripulantCabina tcv = (TripulantCabina) companyiaActual.getComponent()[i];
 							tcv.mostrarComponent();
 						}
 					}
@@ -408,8 +408,8 @@ public class Aplicacio {
 					break;
 				case 2:
 					pos = companyiaActual.seleccionarComponent(3, null);
-					if (pos >= 0 && companyiaActual.getComponents()[pos] instanceof TCP) {
-						TCP tcp = (TCP) companyiaActual.getComponents()[pos];
+					if (pos >= 0 && companyiaActual.getComponent()[pos] instanceof TCP) {
+						TCP tcp = (TCP) companyiaActual.getComponent()[pos];
 						tcp.modificarComponent();
 					} else {
 						System.out.println("\nNo existeix aquest TCP.");
@@ -417,8 +417,8 @@ public class Aplicacio {
 					break;
 				case 3:
 					for (int i = 0; i < companyiaActual.getPosicioComponents(); i++) {
-						if (companyiaActual.getComponents()[i] instanceof TCP) {
-							TCP tcp = (TCP) companyiaActual.getComponents()[i];
+						if (companyiaActual.getComponent()[i] instanceof TCP) {
+							TCP tcp = (TCP) companyiaActual.getComponent()[i];
 							tcp.mostrarComponent();
 						}
 					}
@@ -448,8 +448,8 @@ public class Aplicacio {
 					break;
 				case 2:
 					pos = companyiaActual.seleccionarComponent(4, null);
-					if (pos >= 0 && companyiaActual.getComponents()[pos] instanceof Vol) {
-						Vol vol = (Vol) companyiaActual.getComponents()[pos];
+					if (pos >= 0 && companyiaActual.getComponent()[pos] instanceof Vol) {
+						Vol vol = (Vol) companyiaActual.getComponent()[pos];
 						vol.modificarComponent();
 					} else {
 						System.out.println("\nNo existeix aquest vol.");
@@ -502,8 +502,8 @@ public class Aplicacio {
 					break;
 				case 6:
 					for (int i = 0; i < companyiaActual.getPosicioComponents(); i++) {
-						if (companyiaActual.getComponents()[i] instanceof Vol) {
-							Vol vol = (Vol) companyiaActual.getComponents()[i];
+						if (companyiaActual.getComponent()[i] instanceof Vol) {
+							Vol vol = (Vol) companyiaActual.getComponent()[i];
 							vol.mostrarComponent();
 						}
 					}
