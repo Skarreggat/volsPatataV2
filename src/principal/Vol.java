@@ -7,6 +7,10 @@ import java.util.Date;
 
 import components.Avio;
 import components.Component;
+import components.RutaIntercontinental;
+import components.RutaInternacional;
+import components.RutaNacional;
+import components.RutaTransoceanica;
 import components.TCP;
 import components.Tripulant;
 import components.TripulantCabina;
@@ -195,7 +199,16 @@ public class Vol implements Component {
 
 		System.out.println("\nRuta: ");
 		if (ruta != null) {
-			ruta.mostrarComponent();
+			if (ruta instanceof RutaNacional) {
+				((RutaNacional) ruta).mostrarComponent();
+			} else if (ruta instanceof RutaInternacional) {
+				((RutaInternacional) ruta).mostrarComponent();
+			} else if (ruta instanceof RutaIntercontinental) {
+				((RutaIntercontinental) ruta).mostrarComponent();
+			} else if (ruta instanceof RutaTransoceanica) {
+				((RutaTransoceanica) ruta).mostrarComponent();
+			}
+
 		}
 
 		System.out.println("\nAvio: ");
