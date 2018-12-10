@@ -162,33 +162,18 @@ public class Companyia implements Component {
      Retorn: cap
      */
     public void afegirAvio() {
-        Avio avio=Avio.nouAvio();
-        if(seleccionarComponent(1,avio.getCodi())!=-1){
+        Avio avio = Avio.nouAvio();
+        if (seleccionarComponent(1, avio.getCodi()) != -1) {
             System.out.println("\n Aquest Avio ja existeix");
+        } else {
+
+            components[posicioComponents] = avio;
+            posicioComponents++;
         }
-        
-        components[posicioComponents] = Avio.nouAvio();
-        posicioComponents++;
     }
+
 
     /*
-    public int seleccionarAvio() {
-
-        System.out.println("\nCodi de l'avió?:");
-        boolean trobat = false;
-        int pos = -1;
-
-        for (int i = 0; i < posicioAvions && !trobat; i++) {
-            if (avions[i].getCodi().equals(DADES.next())) {
-                pos = i;
-                trobat = true;
-            }
-        }
-
-        return pos;
-    }
-     */
- /*
      RUTA NACIONAL
      */
  /*
@@ -200,24 +185,15 @@ public class Companyia implements Component {
      Retorn: cap
      */
     public void afegirRutaNacional() {
-        rutesNacionals[posicioRutesNacionals] = RutaNacional.novaRutaNacional();
-        posicioRutesNacionals++;
-    }
+        RutaNacional ruta = RutaNacional.novaRutaNacional();
 
-    public int seleccionarRutaNacional() {
+        if (seleccionarComponent(2, ruta.getCodi()) != -1) {
+            System.out.println("\n Aquesta ruta ja existeix");
+        } else {
 
-        System.out.println("\nCodi de la ruta nacional?:");
-        boolean trobat = false;
-        int pos = -1;
-
-        for (int i = 0; i < posicioRutesNacionals && !trobat; i++) {
-            if (rutesNacionals[i].getCodi().equals(DADES.next())) {
-                pos = i;
-                trobat = true;
-            }
+            components[posicioComponents] = ruta;
+            posicioComponents++;
         }
-
-        return pos;
     }
 
     /*
@@ -232,26 +208,16 @@ public class Companyia implements Component {
      Retorn: cap
      */
     public void afegirRutaInternacional() {
-        rutesInternacionals[posicioRutesInternacionals] = RutaInternacional.novaRutaInternacional();
-        posicioRutesInternacionals++;
-    }
-
-    public int seleccionarRutaInternacional() {
-
-        System.out.println("\nCodi de la ruta internacional?:");
-        boolean trobat = false;
-        int pos = -1;
-
-        for (int i = 0; i < posicioRutesInternacionals && !trobat; i++) {
-            if (rutesInternacionals[i].getCodi().equals(DADES.next())) {
-                pos = i;
-                trobat = true;
-            }
+        RutaInternacional ruta = RutaInternacional.novaRutaInternacional();
+        if (seleccionarComponent(2, ruta.getCodi()) != -1) {
+            System.out.println("\n Aquesta ruta ja existeix");
+        } else {
+            components[posicioComponents] = ruta;
+            posicioComponents++;
         }
-
-        return pos;
     }
 
+    
     /*
      RUTA INTERCONTINENTAL
      */
@@ -264,26 +230,16 @@ public class Companyia implements Component {
      Retorn: cap
      */
     public void afegirRutaIntercontinental() {
-        rutesIntercontinentals[posicioRutesIntercontinentals] = RutaIntercontinental.novaRutaIntercontinental();
-        posicioRutesIntercontinentals++;
+        RutaIntercontinental ruta=RutaIntercontinental.novaRutaIntercontinental();
+         if (seleccionarComponent(2, ruta.getCodi()) != -1) {
+            System.out.println("\n Aquesta ruta ja existeix");
+        } else {
+        components[posicioComponents] = ruta;
+        posicioComponents++;
+         }
     }
 
-    public int seleccionarRutaIntercontinental() {
-
-        System.out.println("\nCodi de la ruta intercontinental?:");
-        boolean trobat = false;
-        int pos = -1;
-
-        for (int i = 0; i < posicioRutesIntercontinentals && !trobat; i++) {
-            if (rutesIntercontinentals[i].getCodi().equals(DADES.next())) {
-                pos = i;
-                trobat = true;
-            }
-        }
-
-        return pos;
-    }
-
+    
     /*
      RUTA TRANSOCEÀNICA
      */
@@ -296,25 +252,16 @@ public class Companyia implements Component {
      Retorn: cap
      */
     public void afegirRutaTransoceanica() {
-        rutesTransoceaniques[posicioRutesTransoceaniques] = RutaTransoceanica.novaRutaTransoceanica();
-        posicioRutesTransoceaniques++;
-    }
-
-    public int seleccionarRutaTransoceanica() {
-
-        System.out.println("\nCodi de la ruta transoceànica?:");
-        boolean trobat = false;
-        int pos = -1;
-
-        for (int i = 0; i < posicioRutesTransoceaniques && !trobat; i++) {
-            if (rutesTransoceaniques[i].getCodi().equals(DADES.next())) {
-                pos = i;
-                trobat = true;
-            }
+        RutaTransoceanica ruta=RutaTransoceanica.novaRutaTransoceanica();
+        if (seleccionarComponent(2, ruta.getCodi()) != -1) {
+            System.out.println("\n Aquesta ruta ja existeix");
+        } else {
+        components[posicioComponents] = ruta;
+        posicioComponents++;
         }
-
-        return pos;
     }
+
+    
 
     /*
      TRIPULACIÓ CABINA
@@ -329,25 +276,16 @@ public class Companyia implements Component {
      Retorn: cap
      */
     public void afegirTripulantCabina() {
-        tripulantsCabina[posicioTripulantsCabina] = TripulantCabina.nouTripulantCabina();
-        posicioTripulantsCabina++;
-    }
-
-    public int seleccionarTripulantCabina() {
-
-        System.out.println("\nPassaport del tripulant de cabina?:");
-        boolean trobat = false;
-        int pos = -1;
-
-        for (int i = 0; i < posicioTripulantsCabina && !trobat; i++) {
-            if (tripulantsCabina[i].getPassaport().equals(DADES.next())) {
-                pos = i;
-                trobat = true;
-            }
+        TripulantCabina tripu=TripulantCabina.nouTripulantCabina();
+        if (seleccionarComponent(2, tripu.getPassaport()) != -1) {
+            System.out.println("\n Aquest tripulant ja existeix");
+        } else {
+        components[posicioComponents] = tripu;
+        posicioComponents++;
         }
-
-        return pos;
     }
+
+    
 
     /*
      TCP
@@ -361,26 +299,16 @@ public class Companyia implements Component {
      Retorn: cap
      */
     public void afegirTCP() {
-        tcps[posicioTcps] = TCP.nouTCP();
-        posicioTcps++;
-    }
-
-    public int seleccionarTCP() {
-
-        System.out.println("\nPassaport del tripulant de la cabina de passatgers?:");
-        boolean trobat = false;
-        int pos = -1;
-
-        for (int i = 0; i < posicioTcps && !trobat; i++) {
-            if (tcps[i].getPassaport().equals(DADES.next())) {
-                pos = i;
-                trobat = true;
-            }
+        TCP tripu=TCP.nouTCP();
+        if (seleccionarComponent(2, tripu.getPassaport()) != -1) {
+            System.out.println("\n Aquest tripulant ja existeix");
+        } else {
+        components[posicioComponents] = tripu;
+        posicioComponents++;
         }
-
-        return pos;
     }
 
+    
     /*
      VOL
      */
@@ -393,25 +321,16 @@ public class Companyia implements Component {
      Retorn: cap
      */
     public void afegirVol() throws ParseException {
-        vols[posicioVols] = Vol.nouVol();
-        posicioVols++;
-    }
-
-    public int seleccionarVol() {
-
-        System.out.println("\nCodi del vol?:");
-        boolean trobat = false;
-        int pos = -1;
-
-        for (int i = 0; i < posicioVols && !trobat; i++) {
-            if (vols[i].getCodi().equals(DADES.next())) {
-                pos = i;
-                trobat = true;
-            }
+        Vol vol=Vol.nouVol();
+        if (seleccionarComponent(2, vol.getCodi()) != -1) {
+            System.out.println("\n Aquest vol ja existeix");
+        } else {
+        components[posicioComponents] = vol;
+        posicioComponents++;
         }
-
-        return pos;
     }
+
+   
 
     /*
      Paràmetres: cap
