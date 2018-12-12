@@ -89,7 +89,7 @@ public class RutaIntercontinental extends RutaInternacional {
 	 * 
 	 * Retorn: cap
 	 */
-	public void modificarRutaIntercontinental() {
+	public void modificarComponent() {
 
 		super.modificarComponent();
 
@@ -100,7 +100,7 @@ public class RutaIntercontinental extends RutaInternacional {
 
 	}
 
-	public void mostrarRutaIntercontinental() {
+	public void mostrarComponent() {
 		super.mostrarComponent();
 
 		System.out.println("\nContinent d'origen: " + continentOri);

@@ -81,7 +81,7 @@ public class RutaInternacional extends Ruta {
 	 * 
 	 * Retorn: cap
 	 */
-	public void modificarRutaInternacional() {
+	public void modificarComponent() {
 
 		super.modificarComponent();
 		System.out.println("\nEl país d'origen de la ruta internacional és:" + paisOri);
@@ -92,7 +92,7 @@ public class RutaInternacional extends Ruta {
 
 	}
 
-	public void mostrarRutaInternacional() {
+	public void mostrarComponent() {
 		super.mostrarComponent();
 		System.out.println("\nPaís d'origen: " + paisOri);
 		System.out.println("\nPaís de destí: " + paisDes);

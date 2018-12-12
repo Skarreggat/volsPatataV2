@@ -81,7 +81,7 @@ public class RutaTransoceanica extends RutaIntercontinental {
 	 * 
 	 * Retorn: cap
 	 */
-	public void modificarRutaTransoceanica() {
+	public void modificarComponent() {
 
 		super.modificarComponent();
 
@@ -90,7 +90,7 @@ public class RutaTransoceanica extends RutaIntercontinental {
 
 	}
 
-	public void mostrarRutaTransoceanica() {
+	public void mostrarComponent() {
 
 		super.mostrarComponent();
 		System.out.println("\nOceà que sobrevola: " + ocea);

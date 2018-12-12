@@ -70,14 +70,14 @@ public class RutaNacional extends Ruta {
 	 * Retorn: cap
 	 */
 
-	public void modificarRutaNacional() {
+	public void modificarComponent() {
 
 		super.modificarComponent();
 		System.out.println("\nEl país de la ruta nacional és:" + pais);
 		pais = (String) demanarDades("\nQuin és el nou país de la ruta nacional:", 2);
 	}
 
-	public void mostrarRutaNacional() {
+	public void mostrarComponent() {
 		super.mostrarComponent();
 		System.out.println("\nPaís: " + pais);
 
